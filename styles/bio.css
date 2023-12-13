@@ -1,15 +1,11 @@
 /* Box-sizing border-box */
 * {
+  margin: 0px;
   box-sizing: border-box;
-  background-color: red;
+  font-size: 13px;
 }
 @media (min-width: 768px) {
   * {
-    background-color: blue;
-  }
-}
-@media (min-width: 1280px) {
-  * {
-    background-color: green;
+    background: red;
   }
 }/*# sourceMappingURL=bio.css.map */
