@@ -27,12 +27,15 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    @include tablet {
-        background: red;
-    }
+    font-family: Avenir Next, sans-serif;
     font-size: 13px;
+    @include tablet {
+        font-size: 14px;
+    }
+    @include desktop {
+    }
+    
 }
-
 
 
 

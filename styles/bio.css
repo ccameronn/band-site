@@ -2,10 +2,11 @@
 * {
   margin: 0px;
   box-sizing: border-box;
+  font-family: Avenir Next, sans-serif;
   font-size: 13px;
 }
 @media (min-width: 768px) {
   * {
-    background: red;
+    font-size: 14px;
   }
 }/*# sourceMappingURL=bio.css.map */
