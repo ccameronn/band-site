@@ -1,24 +1,10 @@
-// LINKING PARTIALS
+// LINKING PARTIALS using import so $variables are available in this sheet
 
-@use "./partials/_colors.scss";
-@use "./partials/fonts.scss";
+@import "./partials/colors";
+@import "./partials/responsive";
 
 
-// RESPONSIVE DESIGN MIXINS
 
-// NB phone screen must work from 320px to 767px
-
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: 1280px) {
-        @content;
-    }
-}
 
 // MAIN STYLING
 
@@ -31,17 +17,67 @@
     font-size: 13px;
     @include tablet {
         font-size: 14px;
+        background-color: red;
     }
     @include desktop {
     }
     
 }
 
+// NAV BAR STYLING
+
+.nav {
+    background-color: $bandsite-black;
+}
+
+.nav__title {
+    color: $white;
+}
+
+.nav__list {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.nav__list-item {
+    color: $silver;
+}
+
+// HERO STYLING
+
+.hero__title {
+    color: $white;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.hero__image {
+    background: url(/assets/images/hero-bio.jpg);
+    width: 100%;
+}
 
 
+// ###################
+// COLORS
+// $bandsite-black: #323232;
+// // BandSite-Black: Primary text color for dark on light background. Dark background color.
 
+// $silver: #AFAFAF;
+// // Silver: Seconday text color. Inactive CTA text color.
 
+// $white: #FFFFFF;
+// // White: Primary text color for light on dark background. Light background color. Active CTA text color.
 
+// // SECONDARY COLORS
+
+// $bandsite-darkblack: #000000;
+// // BandSite-DarkBlack: CTA hover state.
+
+// $mercury: #E1E1E1;
+// // Mercury: Divider line. Form field outline.
+
+// $alabaster: #FAFAFA;
+// // Alabaster: Alternative light background color
+// ####################
 
 
 // SASS STYLING REMINDER - NESTING AND RESPONSIVE DESIGN
