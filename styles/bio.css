@@ -1,29 +1,164 @@
-/* Box-sizing border-box */
+html {
+  font-family: Avenir Next, sans-serif;
+  font-size: 14px;
+}
+
+.font__page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__page-header {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+.font__section-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__section-header {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+.font__subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600px;
+}
+@media (min-width: 768px) {
+  .font__subheader {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.font__body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400px;
+}
+@media (min-width: 768px) {
+  .font__body-copy {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.font__footer-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400px;
+}
+@media (min-width: 768px) {
+  .font__footer-copy {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.font__labels, .font__buttons {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__labels, .font__buttons {
+    font-size: 12px;
+  }
+}
+
+html {
+  font-family: Avenir Next, sans-serif;
+  font-size: 14px;
+}
+
+.font__page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__page-header {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+.font__section-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__section-header {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+.font__subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600px;
+}
+@media (min-width: 768px) {
+  .font__subheader {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.font__body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400px;
+}
+@media (min-width: 768px) {
+  .font__body-copy {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.font__footer-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400px;
+}
+@media (min-width: 768px) {
+  .font__footer-copy {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.font__labels, .font__buttons {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700px;
+}
+@media (min-width: 768px) {
+  .font__labels, .font__buttons {
+    font-size: 12px;
+  }
+}
+
 * {
   margin: 0px;
   box-sizing: border-box;
-  font-family: Avenir Next, sans-serif;
-  font-size: 13px;
-}
-@media (min-width: 768px) {
-  * {
-    font-size: 14px;
-    background-color: red;
-  }
 }
 .nav {
   background-color: #323232;
+  width: 100%;
+  text-align: center;
 }
-
 .nav__title {
   color: #FFFFFF;
 }
-
 .nav__list {
   list-style-type: none;
   padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .nav__list-item {
   color: #AFAFAF;
 }
@@ -32,8 +167,9 @@
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.2);
 }
-
 .hero__image {
   background: url(/assets/images/hero-bio.jpg);
+  background-size: cover;
   width: 100%;
+  height: 200px;
 }/*# sourceMappingURL=bio.css.map */

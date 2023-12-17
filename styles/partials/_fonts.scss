@@ -1,0 +1,82 @@
+// FONT SYLING - TO BE CONVERTED TO REM
+// @import resposivity settings to allow for responsive fonts
+
+@import "./responsive";
+
+// DEFINING FONT WEIGHT VARIABLES
+
+$bold: 700px;
+$demi: 600px;
+$regular: 400px;
+
+// FONT STYLINGS
+
+html {
+    font-family: Avenir Next, sans-serif;
+    font-size: 14px;
+}
+
+.font {
+    &__page-header {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: $bold;
+        @include tablet {
+            font-size: 60px;
+            line-height: 68px;
+        }
+    }
+    
+    &__section-header {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: $bold;
+        @include tablet {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+    
+    &__subheader {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: $demi;
+        @include tablet {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    &__body-copy {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: $regular;
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__footer-copy {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: $regular;
+        @include tablet {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    &__labels, &__buttons {
+        font-size: 10px;
+        line-height: 20px;
+        font-weight: $bold;
+        @include tablet {
+            font-size: 12px;
+        }
+    }
+
+}
+
+
+

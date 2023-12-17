@@ -1,23 +1,21 @@
-// LINKING PARTIALS using import so $variables are available in this sheet
+// LINKING PARTIALS using @import for some here so $variables are available in this sheet
+
+@use "./partials/fonts";
 
 @import "./partials/colors";
 @import "./partials/responsive";
-
+@import "./partials/fonts";
 
 
 
 // MAIN STYLING
 
-/* Box-sizing border-box */
+//  Box-sizing border-box 
 
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-family: Avenir Next, sans-serif;
-    font-size: 13px;
     @include tablet {
-        font-size: 14px;
-        background-color: red;
     }
     @include desktop {
     }
@@ -28,32 +26,47 @@
 
 .nav {
     background-color: $bandsite-black;
+    width: 100%;
+    text-align: center;
+
+    &__title {
+        color: $white;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__list-item {
+        color: $silver;
+    }
+
 }
 
-.nav__title {
-    color: $white;
-}
-
-.nav__list {
-    list-style-type: none;
-    padding: 0px;
-}
-
-.nav__list-item {
-    color: $silver;
-}
 
 // HERO STYLING
 
-.hero__title {
-    color: $white;
-    background-color: rgba(0,0,0,0.2);
+.hero {
+
+    &__title {
+        color: $white;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    &__image {
+        background: url(/assets/images/hero-bio.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+    }
+
 }
 
-.hero__image {
-    background: url(/assets/images/hero-bio.jpg);
-    width: 100%;
-}
+
 
 
 // ###################
@@ -78,37 +91,4 @@
 // $alabaster: #FAFAFA;
 // // Alabaster: Alternative light background color
 // ####################
-
-
-// SASS STYLING REMINDER - NESTING AND RESPONSIVE DESIGN
-
-
-// * {
-//     box-sizing: border-box;
-//     background-color: red;
-//     @include tablet {
-//         background-color: blue;
-//     }
-//     @include desktop {
-//         background-color: green;
-//     }
-// }
-
-// .header {
-//     background-color: #bbbbbb;
-//     padding: 1rem;
-//     text-align: center;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: baseline;
-
-//     &__logo {
-//         font-size: 2rem;
-//     }
-
-//     &__header-left,
-//     &__header-right {
-//         display: none;
-//     }
-// }
 
