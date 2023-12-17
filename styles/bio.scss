@@ -1,11 +1,7 @@
 // LINKING PARTIALS using @import for some here so $variables are available in this sheet
 
-@use "./partials/fonts";
-
 @import "./partials/colors";
-@import "./partials/responsive";
 @import "./partials/fonts";
-
 
 
 // MAIN STYLING
@@ -13,20 +9,16 @@
 //  Box-sizing border-box 
 
 * {
+    padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    @include tablet {
-    }
-    @include desktop {
-    }
-    
+    max-width: 100vw;
 }
 
 // NAV BAR STYLING
 
 .nav {
     background-color: $bandsite-black;
-    width: 100%;
     text-align: center;
 
     &__title {
@@ -36,13 +28,17 @@
     &__list {
         list-style-type: none;
         padding: 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
 
     &__list-item {
         color: $silver;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 
 }
@@ -55,17 +51,55 @@
     &__title {
         color: $white;
         background-color: rgba(0,0,0,0.2);
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position:absolute;
+        padding-left: 24px;
+        @include tablet {
+            height: 400px;
+        }
+        @include desktop {
+            height: 600px;
+        }
     }
+    
 
     &__image {
         background: url(/assets/images/hero-bio.jpg);
         background-size: cover;
         width: 100%;
-        height: 200px;
+        height: 300px;
+        @include tablet {
+            height: 400px;
+        }
+        @include desktop {
+            height: 600px;
+        }
     }
-
 }
 
+
+.about {
+    width: 100%;
+
+    // &__title {
+
+    // }
+
+    &__image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 90%;
+    }
+}
 
 
 
