@@ -241,6 +241,10 @@ a {
     background-color: $bandsite-black;
     color: $white;
     padding: 16px;
+    @include tablet {
+        position:relative;
+        width: 100%;
+    }
 
     &__CTA {
         @include tablet {
@@ -289,5 +293,10 @@ a {
     &__bandsite-logo {
         margin-top: 64px;
         margin-bottom: 12px;
+        @include tablet {
+            position:absolute;
+            top: 18px;
+            right: 40px;
+        }
     }
 }
