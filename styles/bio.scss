@@ -20,7 +20,7 @@ a {
 // NAV BAR STYLING
 
 .bandsite-logo {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 20px;
     font-weight: 300;
 }
@@ -33,11 +33,22 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include tablet {
+        flex-direction: row;
+        padding: 0px;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
     &__title {
         width: 100%;
         color: $white;
         text-align: center;
+        @include tablet {
+            width: auto;
+            padding: 24px;
+            margin: 0px 16px;
+        }
     }
 
     &__list {
@@ -45,6 +56,9 @@ a {
         width: 100%;
         display: grid;
         grid-template-columns: 50% 50%;
+        @include tablet {
+            width: auto;
+        }
     }
 
     &__list-item {
@@ -68,6 +82,9 @@ a {
             color: $white;
             border-bottom: solid $white 4px;
         }
+        @include tablet {
+            margin-left: 16px;
+        }
     }
 
 }
@@ -90,6 +107,9 @@ a {
         right: 0;
         bottom: 3px;
         padding-left: 16px;
+        @include tablet {
+            padding-left: 36px;
+        }
     }
 
     &__image {
@@ -102,9 +122,25 @@ a {
 .about {
     width: 100%;
     padding: 0px 16px;
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__title {
         color: $bandsite-black;
+        @include tablet {
+            padding-left: 20px;
+            width: 100%;
+        }
+    }
+
+    &__content-container {
+        @include tablet {
+            width: 80%;
+        }
     }
 
     &__image-container {
@@ -130,8 +166,19 @@ a {
 
     &__copy {
         color: $bandsite-black;
+        @include tablet {
+            display: flex;
+        }
         &-first {
             margin-bottom: 16px;
+            @include tablet {
+                padding: 8px;
+            }
+        }
+        &-second {
+            @include tablet {
+                padding: 8px;
+            }
         }
     }
 
@@ -145,13 +192,19 @@ a {
     width: 100vw;
     display: flex;
     flex-direction: column;
+    @include tablet {
+        justify-content: center;
+        align-items: center;
+    }
     
-
-    // padding: 16px;
     &__title {
         color: $bandsite-black;
         padding-left: 16px;
         padding-bottom: 0px;
+        @include tablet {
+            width: 100%;
+            padding-left: 24px;
+        }
     }
 
     &__gallery-container {
@@ -159,6 +212,13 @@ a {
         width: 100%;
         display: grid;
         grid-template-columns: 100%;
+        @include tablet {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3%;
+            row-gap: 0%;
+            height: fit-content;
+            padding: 24px;
+        }
     }
 
     &__image-container {
@@ -182,6 +242,21 @@ a {
     color: $white;
     padding: 16px;
 
+    &__CTA {
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+        }
+    }
+
+    &__CTA-title {
+        @include tablet {
+            margin-right: 60px;
+        }
+    }
+
+
     &__CTA-logo-container {
         margin-bottom: 16px;
     }
@@ -195,6 +270,9 @@ a {
 
     &__contact-container {
         display: grid;
+        @include tablet {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 
     &__contact {

@@ -60,9 +60,22 @@ html {
         }
 
         &--quote {
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 18px;
+            line-height: 32px;
             font-weight: $demi;
+            @include tablet {
+                font-size: 20px;
+            }
+            &-name {
+                font-size: 18px;
+                line-height: 32px;
+                font-weight: $demi;
+                margin-bottom: 16px;
+            @include tablet {
+                margin-top: 16px;
+                margin-bottom: 40px;
+            }
+            }
         }
 
     }
