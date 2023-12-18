@@ -1,15 +1,18 @@
 // RESPONSIVE DESIGN MIXINS
 
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
 // NB phone screen must work from 320px to 767px
 
 @mixin tablet {
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-width) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: 1280px) {
+    @media (min-width: $desktop-width) {
         @content;
     }
 }

@@ -1,13 +1,12 @@
 // FONT SYLING - TO BE CONVERTED TO REM
-// @import resposivity settings to allow for responsive fonts
 
-@import "./responsive";
+@use "./responsive" as *;
 
 // DEFINING FONT WEIGHT VARIABLES
 
-$bold: 700px;
-$demi: 600px;
-$regular: 400px;
+$bold: 700;
+$demi: 600;
+$regular: 400;
 
 // FONT STYLINGS
 
@@ -31,7 +30,7 @@ html {
         font-size: 24px;
         line-height: 32px;
         font-weight: $bold;
-        padding-top: 24px;
+        padding-top: 8px;
         padding-bottom: 16px;
         @include tablet {
             font-size: 36px;
@@ -60,6 +59,12 @@ html {
             line-height: 22px;
         }
 
+        &--quote {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: $demi;
+        }
+
     }
 
     &__footer-copy {
@@ -69,6 +74,9 @@ html {
         @include tablet {
             font-size: 14px;
             line-height: 20px;
+        }
+        &--demi {
+            font-weight: $demi;
         }
     }
 

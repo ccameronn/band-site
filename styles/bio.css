@@ -6,7 +6,7 @@ html {
 .font__page-header {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .font__page-header {
@@ -17,8 +17,8 @@ html {
 .font__section-header {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 700px;
-  padding-top: 24px;
+  font-weight: 700;
+  padding-top: 8px;
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
@@ -32,7 +32,7 @@ html {
 .font__subheader {
   font-size: 14px;
   line-height: 22px;
-  font-weight: 600px;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .font__subheader {
@@ -43,7 +43,7 @@ html {
 .font__body-copy {
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .font__body-copy {
@@ -51,10 +51,15 @@ html {
     line-height: 22px;
   }
 }
+.font__body-copy--quote {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
 .font__footer-copy {
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .font__footer-copy {
@@ -62,10 +67,13 @@ html {
     line-height: 20px;
   }
 }
+.font__footer-copy--demi {
+  font-weight: 600;
+}
 .font__labels, .font__buttons {
   font-size: 10px;
   line-height: 20px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .font__labels, .font__buttons {
@@ -77,71 +85,89 @@ html {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  max-width: 100vw;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bandsite-logo {
+  font-size: 32px;
+  line-height: 20px;
+  font-weight: 300;
 }
 
 .nav {
   background-color: #323232;
-  text-align: center;
+  padding: 24px 0px 0px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .nav__title {
+  width: 100%;
   color: #FFFFFF;
+  text-align: center;
 }
 .nav__list {
   list-style-type: none;
-  padding: 0px;
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
 }
 .nav__list-item {
-  color: #AFAFAF;
+  color: #E1E1E1;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 24px;
+  border-bottom: solid #E1E1E1 0px;
+  transition: 0.2s;
+}
+.nav__list-item:hover {
+  cursor: pointer;
+  border-bottom: solid #E1E1E1 4px;
+}
+.nav__list-item:active {
+  color: #FFFFFF;
+  border-bottom: solid #FFFFFF 4px;
+}
+.nav__list-item--active {
+  color: #FFFFFF;
+  border-bottom: solid #FFFFFF 4px;
 }
 
+.hero {
+  position: relative;
+}
 .hero__title {
   color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 300px;
+  background-color: rgba(50, 50, 50, 0.4980392157);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: absolute;
-  padding-left: 24px;
-}
-@media (min-width: 768px) {
-  .hero__title {
-    height: 400px;
-  }
-}
-@media (min-width: 1280px) {
-  .hero__title {
-    height: 600px;
-  }
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 3px;
+  padding-left: 16px;
 }
 .hero__image {
-  background: url(/assets/images/hero-bio.jpg);
-  background-size: cover;
   width: 100%;
-  height: 300px;
-}
-@media (min-width: 768px) {
-  .hero__image {
-    height: 400px;
-  }
-}
-@media (min-width: 1280px) {
-  .hero__image {
-    height: 600px;
-  }
+  height: 100%;
 }
 
 .about {
   width: 100%;
+  padding: 0px 16px;
+}
+.about__title {
+  color: #323232;
 }
 .about__image-container {
   width: 100%;
@@ -150,5 +176,81 @@ html {
   align-items: center;
 }
 .about__image {
-  width: 90%;
+  width: 100%;
+}
+.about__quote {
+  color: #323232;
+  margin: 16px 0px;
+}
+.about__copy-title {
+  color: black;
+  margin-bottom: 16px;
+}
+.about__copy {
+  color: #323232;
+}
+.about__copy-first {
+  margin-bottom: 16px;
+}
+
+.gallery {
+  margin-top: 24px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.gallery__title {
+  color: #323232;
+  padding-left: 16px;
+  padding-bottom: 0px;
+}
+.gallery__gallery-container {
+  padding: 16px 16px 0px 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+}
+.gallery__image-container {
+  width: 100%;
+  height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.gallery__image {
+  width: 100%;
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 16px;
+}
+.footer__CTA-logo-container {
+  margin-bottom: 16px;
+}
+.footer__CTA-logo {
+  margin-right: 24px;
+}
+.footer__CTA-logo:hover {
+  cursor: pointer;
+}
+.footer__contact-container {
+  display: grid;
+}
+.footer__contact {
+  margin: 16px 0px;
+}
+.footer__contact--gap {
+  margin-bottom: 16px;
+}
+.footer__copyright {
+  font-size: 12px;
+}
+.footer__bandsite-logo {
+  margin-top: 64px;
+  margin-bottom: 12px;
 }/*# sourceMappingURL=bio.css.map */
