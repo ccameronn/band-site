@@ -1,100 +1,100 @@
 html {
   font-family: Avenir Next, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .font__page-header {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
 }
 @media (min-width: 768px) {
   .font__page-header {
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
 .font__section-header {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
   padding-top: 8px;
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
   .font__section-header {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     padding-top: 48px;
     padding-bottom: 36px;
   }
 }
 .font__subheader {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .font__subheader {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .font__body-copy {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   .font__body-copy {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 .font__body-copy--quote {
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.125rem;
+  line-height: 2rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .font__body-copy--quote {
-    font-size: 20px;
+    font-size: 1.75rem;
   }
 }
 .font__body-copy--quote-name {
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.125rem;
+  line-height: 2rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .font__body-copy--quote-name {
-    margin-top: 16px;
-    margin-bottom: 40px;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
   }
 }
 .font__footer-copy {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   .font__footer-copy {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 .font__footer-copy--demi {
   font-weight: 600;
 }
 .font__labels, .font__buttons {
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
   font-weight: 700;
 }
 @media (min-width: 768px) {
   .font__labels, .font__buttons {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 
@@ -110,8 +110,8 @@ a {
 }
 
 .bandsite-logo {
-  font-size: 28px;
-  line-height: 20px;
+  font-size: 1.75rem;
+  line-height: 1.25rem;
   font-weight: 300;
 }
 
@@ -142,6 +142,11 @@ a {
     width: auto;
     padding: 24px;
     margin: 0px 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__title {
+    margin-left: 56px;
   }
 }
 .nav__list {
@@ -204,6 +209,11 @@ a {
     padding-left: 36px;
   }
 }
+@media (min-width: 1280px) {
+  .hero__title {
+    padding-left: 80px;
+  }
+}
 .hero__image {
   width: 100%;
   height: 100%;
@@ -230,9 +240,19 @@ a {
     width: 100%;
   }
 }
+@media (min-width: 1280px) {
+  .about__title {
+    padding-left: 80px;
+  }
+}
 @media (min-width: 768px) {
   .about__content-container {
     width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  .about__content-container {
+    width: 70%;
   }
 }
 .about__image-container {
@@ -297,6 +317,11 @@ a {
     padding-left: 24px;
   }
 }
+@media (min-width: 1280px) {
+  .gallery__title {
+    padding-left: 100px;
+  }
+}
 .gallery__gallery-container {
   padding: 16px 16px 0px 16px;
   width: 100%;
@@ -311,6 +336,11 @@ a {
     height: -moz-fit-content;
     height: fit-content;
     padding: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__gallery-container {
+    padding: 24px 100px;
   }
 }
 .gallery__image-container {
@@ -336,6 +366,11 @@ a {
   .footer {
     position: relative;
     width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 18px 350px 18px 100px;
   }
 }
 @media (min-width: 768px) {
@@ -376,7 +411,13 @@ a {
 .footer__copyright {
   font-size: 12px;
 }
+@media (min-width: 1280px) {
+  .footer__copyright {
+    margin-top: 18px;
+  }
+}
 .footer__bandsite-logo {
+  color: #FFFFFF;
   margin-top: 64px;
   margin-bottom: 12px;
 }
@@ -385,5 +426,11 @@ a {
     position: absolute;
     top: 18px;
     right: 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__bandsite-logo {
+    top: 18px;
+    right: 150px;
   }
 }/*# sourceMappingURL=bio.css.map */
