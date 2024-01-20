@@ -190,44 +190,33 @@ a {
 
 .hero {
   position: relative;
-}
-.hero__title {
-  color: #FFFFFF;
-  background-color: rgba(50, 50, 50, 0.4980392157);
+  height: 50svh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 3px;
-  padding-left: 16px;
+  background: linear-gradient(45deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position-x: right;
 }
 @media (min-width: 768px) {
-  .hero__title {
-    padding-left: 36px;
+  .hero {
+    height: calc(100svh - 70px);
   }
 }
-@media (min-width: 1280px) {
-  .hero__title {
-    padding-left: 80px;
-  }
-}
-.hero__image {
-  width: 100%;
-  height: 100%;
+.hero__title {
+  color: #FFFFFF;
+  padding-left: 2rem;
 }
 
 .about {
   width: 100%;
   padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 }
@@ -275,22 +264,19 @@ a {
 .about__copy {
   color: #323232;
 }
+.about__copy > * {
+  margin-bottom: 1rem;
+}
+.about__copy:last-child {
+  margin-bottom: 0px;
+}
 @media (min-width: 768px) {
   .about__copy {
     display: flex;
+    gap: 0.5rem;
   }
-}
-.about__copy-first {
-  margin-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .about__copy-first {
-    padding: 8px;
-  }
-}
-@media (min-width: 768px) {
-  .about__copy-second {
-    padding: 8px;
+  .about__copy > * {
+    margin-bottom: 0rem;
   }
 }
 
@@ -330,7 +316,7 @@ a {
 }
 @media (min-width: 768px) {
   .gallery__gallery-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 3%;
     row-gap: 0%;
     height: -moz-fit-content;
@@ -361,16 +347,12 @@ a {
   background-color: #323232;
   color: #FFFFFF;
   padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
   .footer {
-    position: relative;
-    width: 100%;
-  }
-}
-@media (min-width: 1280px) {
-  .footer {
-    padding: 18px 350px 18px 100px;
+    grid-template-columns: 1fr auto;
   }
 }
 @media (min-width: 768px) {
@@ -383,6 +365,8 @@ a {
 @media (min-width: 768px) {
   .footer__CTA-title {
     margin-right: 60px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 .footer__CTA-logo-container {
@@ -420,17 +404,4 @@ a {
   color: #FFFFFF;
   margin-top: 64px;
   margin-bottom: 12px;
-}
-@media (min-width: 768px) {
-  .footer__bandsite-logo {
-    position: absolute;
-    top: 18px;
-    right: 40px;
-  }
-}
-@media (min-width: 1280px) {
-  .footer__bandsite-logo {
-    top: 18px;
-    right: 150px;
-  }
 }/*# sourceMappingURL=bio.css.map */

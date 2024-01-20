@@ -33,7 +33,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include tablet {
+    @include tabletAndDesktop {
         flex-direction: row;
         padding: 0px;
         justify-content: flex-start;
@@ -44,7 +44,7 @@ a {
         width: 100%;
         color: $white;
         text-align: center;
-        @include tablet {
+        @include tabletAndDesktop {
             width: auto;
             padding: 24px;
             margin: 0px 16px;
@@ -60,7 +60,7 @@ a {
         width: 100%;
         display: grid;
         grid-template-columns: 50% 50%;
-        @include tablet {
+        @include tabletAndDesktop {
             width: auto;
         }
     }
@@ -86,7 +86,7 @@ a {
             color: $white;
             border-bottom: solid $white 4px;
         }
-        @include tablet {
+        @include tabletAndDesktop {
             margin-left: 16px;
         }
     }
@@ -98,30 +98,21 @@ a {
 
 .hero {
     position: relative;
+    height: 50svh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(45deg, rgba($bandsite-black, 0.5), rgba($bandsite-black, 0.5)), url(../assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-position-x: right;
+
+    @include tabletAndDesktop {
+        height: calc(100svh - 70px);
+    }
 
     &__title {
         color: $white;
-        background-color: $bandsite-black-transparent;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        position:absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 3px;
-        padding-left: 16px;
-        @include tablet {
-            padding-left: 36px;
-        }
-        @include desktop {
-            padding-left: 80px;
-        }
-    }
-
-    &__image {
-        width: 100%;
-        height: 100%;
+        padding-left: 2rem;
     }
 }
 
@@ -130,17 +121,18 @@ a {
 .about {
     width: 100%;
     padding: 0px 16px;
-    @include tablet {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tabletAndDesktop {
         align-items: center;
     }
-    
 
     &__title {
         color: $bandsite-black;
-        @include tablet {
+
+        @include tabletAndDesktop {
             padding-left: 20px;
             width: 100%;
         }
@@ -150,7 +142,7 @@ a {
     }
 
     &__content-container {
-        @include tablet {
+        @include tabletAndDesktop {
             width: 80%;
         }
         @include desktop {
@@ -181,18 +173,17 @@ a {
 
     &__copy {
         color: $bandsite-black;
-        @include tablet {
+        & > * {
+            margin-bottom: 1rem;
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+        @include tabletAndDesktop {
             display: flex;
-        }
-        &-first {
-            margin-bottom: 16px;
-            @include tablet {
-                padding: 8px;
-            }
-        }
-        &-second {
-            @include tablet {
-                padding: 8px;
+            gap: 0.5rem;
+            & > * {
+                margin-bottom: 0rem;
             }
         }
     }
@@ -205,7 +196,7 @@ a {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    @include tablet {
+    @include tabletAndDesktop {
         justify-content: center;
         align-items: center;
     }
@@ -214,7 +205,7 @@ a {
         color: $bandsite-black;
         padding-left: 16px;
         padding-bottom: 0px;
-        @include tablet {
+        @include tabletAndDesktop {
             width: 100%;
             padding-left: 24px;
         }
@@ -228,8 +219,8 @@ a {
         width: 100%;
         display: grid;
         grid-template-columns: 100%;
-        @include tablet {
-            grid-template-columns: 1fr 1fr 1fr;
+        @include tabletAndDesktop {
+            grid-template-columns: repeat(3, 1fr);
             gap: 3%;
             row-gap: 0%;
             height: fit-content;
@@ -262,17 +253,14 @@ a {
     background-color: $bandsite-black;
     color: $white;
     padding: 16px;
-    @include tablet {
-        position:relative;
-        width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include tabletAndDesktop {
+        grid-template-columns: 1fr auto;
     }
-    @include desktop {
-        padding: 18px 350px 18px 100px;
-    }
-
 
     &__CTA {
-        @include tablet {
+        @include tabletAndDesktop {
             display: flex;
             justify-content: flex-start;
             align-items: baseline;
@@ -280,8 +268,10 @@ a {
     }
 
     &__CTA-title {
-        @include tablet {
+        @include tabletAndDesktop {
             margin-right: 60px;
+            padding-top: 0px;
+            padding-bottom: 0px;
         }
     }
 
@@ -299,7 +289,7 @@ a {
 
     &__contact-container {
         display: grid;
-        @include tablet {
+        @include tabletAndDesktop {
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
@@ -322,14 +312,7 @@ a {
         color: $white;
         margin-top: 64px;
         margin-bottom: 12px;
-        @include tablet {
-            position:absolute;
-            top: 18px;
-            right: 40px;
-        }
-        @include desktop {
-            top: 18px;
-            right: 150px;
-        }
     }
 }
+
+

@@ -6,13 +6,19 @@ $desktop-width: 1280px;
 // NB phone screen must work from 320px to 767px
 
 @mixin tablet {
-    @media (min-width: $tablet-width) {
+    @media (min-width: $tablet-width) and (max-width: $desktop-width) {
         @content;
     }
 }
 
 @mixin desktop {
     @media (min-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin tabletAndDesktop {
+    @media (min-width: $tablet-width) {
         @content;
     }
 }

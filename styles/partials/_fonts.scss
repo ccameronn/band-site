@@ -8,7 +8,7 @@ $bold: 700;
 $demi: 600;
 $regular: 400;
 
-// FONT STYLINGS
+// FONT STYLINGST
 
 html {
     font-family: Avenir Next, sans-serif;
@@ -20,7 +20,7 @@ html {
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: $bold;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 3.75rem;
             line-height: 4.25rem;
         }
@@ -32,7 +32,7 @@ html {
         font-weight: $bold;
         padding-top: 8px;
         padding-bottom: 16px;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 2.25rem;
             line-height: 2.75rem;
             padding-top: 48px;
@@ -44,7 +44,7 @@ html {
         font-size: 0.875rem;
         line-height: 1.375rem;
         font-weight: $demi;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 1.5rem;
             line-height: 2rem;
         }
@@ -54,7 +54,7 @@ html {
         font-size: 0.813rem;
         line-height: 1.125rem;
         font-weight: $regular;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 0.875rem;
             line-height: 1.375rem;
         }
@@ -63,7 +63,7 @@ html {
             font-size: 1.125rem;
             line-height: 2rem;
             font-weight: $demi;
-            @include tablet {
+            @include tabletAndDesktop {
                 font-size: 1.75rem;
             }
             &-name {
@@ -71,7 +71,7 @@ html {
                 line-height: 2rem;
                 font-weight: $demi;
                 margin-bottom: 1rem;
-            @include tablet {
+            @include tabletAndDesktop {
                 margin-top: 1rem;
                 margin-bottom: 2.5rem;
             }
@@ -84,7 +84,7 @@ html {
         font-size: 0.813rem;
         line-height: 1.125rem;
         font-weight: $regular;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 0.875rem;
             line-height: 1.25rem;
         }
@@ -97,7 +97,7 @@ html {
         font-size: 0.625rem;
         line-height: 1.25rem;
         font-weight: $bold;
-        @include tablet {
+        @include tabletAndDesktop {
             font-size: 0.75rem;
         }
     }
