@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/bio.css" />
     <link rel="font" href="./assets/fonts/AvenirNextLTPro-Regular.otf" />
+    <script src="./scripts/index-page.js" defer></script>
     <title>BANDSITE</title>
   </head>
   <body>
     <nav class="nav">
-      <a class="nav__title bandsite-logo" href="/">BANDSITE</a>
+      <a class="nav__title bandsite-logo" href="/"
+        ><img src="./assets/logo/Logo-bandsite.svg"
+      /></a>
       <ul class="nav__list">
         <li>
           <a class="nav__list-item nav__list-item--active" href="/"
@@ -143,18 +146,67 @@
           </li>
         </ul>
       </section>
+
       <section class="jtc">
-        <h2 class="jtc__title">Join the Conversation</h2>
+        <h2 class="jtc__title font__section-header">Join the Conversation</h2>
         <div class="jtc__form">
-          <div class="jtc__form-image">
-            <img src="" />
+          <div class="jtc__form-image-container">
+            <img
+              class="jtc__form-image"
+              src="./assets/images/Mohan-muruge.jpg"
+            />
           </div>
           <form
-            class="jtc__form-input"
+            class="jtc__form-inputs"
             action="./scripts/index-page.js"
             method="POST"
-          ></form>
+          >
+            <label class="jtc__form-label font__labels" for="name">NAME</label>
+            <input
+              class="jtc__form-input-name"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+            />
+            <label class="jtc__form-label font__labels" for="comment"
+              >COMMENT</label
+            >
+            <textarea
+              class="jtc__form-input-comment"
+              name="comment"
+              id="comment"
+              placeholder="Add a new comment"
+            ></textarea>
+            <div class="jtc__form-button-container">
+              <button class="jtc__form-button font__buttons" type="submit">
+                COMMENT
+              </button>
+            </div>
+          </form>
         </div>
+
+        <ul class="jtc__comments">
+          <div class="jtc__comments-divider"></div>
+          <li class="jtc__comments-item">
+            <div class="jtc__comments-image-container">
+              <!-- <img
+                class="jtc__comments-image"
+                src="./assets/images/Mohan-muruge.jpg"
+              /> -->
+            </div>
+            <div class="jtc__comments-text">
+              <div class="jtc__comments-sub-header">
+                <p>NAME</p>
+                <p>DATE</p>
+              </div>
+              <div>
+                <p>THE COMMENT ITSELF</p>
+              </div>
+            </div>
+          </li>
+          <div class="jtc__comments-divider"></div>
+        </ul>
       </section>
     </main>
     <footer class="footer">
@@ -216,7 +268,9 @@
         </div>
       </section>
       <aside class="footer__aside">
-        <a class="footer__bandsite-logo bandsite-logo" href="/">BANDSITE</a>
+        <a class="footer__bandsite-logo bandsite-logo" href="/"
+          ><img src="./assets/logo/Logo-bandsite.svg"
+        /></a>
       </aside>
       <div class="footer__copyright font__footer-copy">
         Copyright The Bees Knees © 2021 All Rights Reserved
