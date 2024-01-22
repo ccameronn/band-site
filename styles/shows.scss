@@ -1,0 +1,43 @@
+@use "./partials/fonts" as *;
+@use "./partials/colors" as *;
+@use "./partials/responsive" as *;
+@use "./bio.scss" as *;
+
+
+
+// HERO STYLING
+
+.hero-shows {
+    position: relative;
+    height: 50svh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    background: linear-gradient(45deg, rgba($bandsite-black, 0.5), rgba($bandsite-black, 0.5)), url(../assets/images/hero-shows.jpg);
+    background-size: cover;
+    background-position-x: right;
+
+    @include tabletAndDesktop {
+        height: calc(100svh - 70px);
+    }
+
+    &__title {
+        color: $white;
+        padding-left: 2rem;
+        padding-right: 30%;
+    }
+
+    &__subtitle {
+        color: $white;
+        padding-left: 2rem;
+        padding-right: 30%;
+        margin-bottom: 1rem;
+        font-size: 16px;
+    }
+}
+
+
+.shows-iframe {
+    padding: 2rem;
+}
