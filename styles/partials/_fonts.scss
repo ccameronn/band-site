@@ -1,6 +1,7 @@
 // FONT SYLING - TO BE CONVERTED TO REM
 
 @use "./responsive" as *;
+@use "./colors" as *;
 
 // DEFINING FONT WEIGHT VARIABLES
 
@@ -76,6 +77,14 @@ html {
                 margin-bottom: 2.5rem;
             }
             }
+        }
+
+        &--bold {
+            font-weight: $bold;
+        }
+
+        &--timestamp {
+            color: $silver;
         }
 
     }

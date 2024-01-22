@@ -22,6 +22,22 @@
         height: calc(100svh - 70px);
     }
 
+    @include desktop {
+        flex-direction: row;
+        align-items: center;
+        padding: 4rem;
+    }
+
+    &__soundcloud {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 100%;
+
+        @include tabletAndDesktop {
+            max-width: 500px;
+        }
+    }
+
     &__title {
         color: $white;
         padding-left: 2rem;
@@ -38,6 +54,18 @@
 }
 
 
+
+
 .shows-iframe {
-    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 10px;
+    color: #cccccc;
+    line-break: anywhere;
+    word-break: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+    font-weight: 100;
 }
