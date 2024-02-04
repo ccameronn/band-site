@@ -13,7 +13,6 @@ let commentList = document.querySelector(".jtc__comments");
 // Function that takes in a comment object and displays it on the page using DOM manipulation
 
 function displayComment(object) {
-    // console.log(object);
 
     // create new comment using DOM manipulation
 
@@ -26,12 +25,7 @@ function displayComment(object) {
     let imageElement = imageDiv.appendChild(document.createElement("img"));
     imageElement.classList.add("jtc__comments-image");
 
-    // var searchPic;
-    // function LoadImages() {
-    // searchPic = new Image(100,100);
-    // searchPic.src = "./assets/images/Mohan-muruge.jpg";
-    // }
-    // document[".jtc__comments-image"].src = searchPic;
+
 
     let textDiv= newCommentItem.appendChild(document.createElement("div"));
     textDiv.classList.add("jtc__comments-text");
