@@ -8,14 +8,41 @@ let showDetailsArray = [
 ];
 
 
-// function that creates a list item in the DOM with an input object
+
 
 let showsList = document.querySelector(".shows__list");
 
+// HEADER LABELS only visible in tablet and desktop view
+function createHeaderLabels() {
+    let labelHeaderContainer = showsList.appendChild(document.createElement("div"));
+    labelHeaderContainer.classList.add("shows__label-header-container");
+
+
+    let dateLabelHeader = labelHeaderContainer.appendChild(document.createElement("p"));
+    dateLabelHeader.classList.add("shows__label-header", "font__labels");
+    dateLabelHeader.textContent = "DATE";
+
+    let venueLabelHeader = labelHeaderContainer.appendChild(document.createElement("p"));
+    venueLabelHeader.classList.add("shows__label-header", "font__labels");
+    venueLabelHeader.textContent = "VENUE";
+
+    let locationLabelHeader = labelHeaderContainer.appendChild(document.createElement("p"));
+    locationLabelHeader.classList.add("shows__label-header", "font__labels");
+    locationLabelHeader.textContent = "LOCATION";
+
+    let spacingLabelHeader = labelHeaderContainer.appendChild(document.createElement("p"));
+    spacingLabelHeader.classList.add("shows__label-header");
+}
+
+createHeaderLabels()
+
+
+// function that creates a list item in the DOM with an input object
 
 function displayShow(object) {
 
     // create new show using DOM manipulation
+
 
     let newShow = showsList.appendChild(document.createElement("li"));
     newShow.classList.add("shows__list-item");
@@ -50,8 +77,21 @@ function displayShow(object) {
     newButton.textContent = "BUY TICKETS";
 
 
-    let newDivider = newShow.appendChild(document.createElement("div"));
+    let newDivider = showsList.appendChild(document.createElement("div"));
     newDivider.classList.add("shows__divider");
+
+
+    // function to change color of a show item on click
+    newShow.addEventListener("click", () => {
+        // Remove active class from all show items
+        const allShows = document.querySelectorAll(".shows__list-item");
+        allShows.forEach((show) => {
+          show.classList.remove("shows__list-item--active");
+        });
+    
+        // Adds the active class to the clicked show item
+        newShow.classList.add("shows__list-item--active");
+      });
 
 
     // Assign varibles to date, venue, and location
@@ -65,7 +105,7 @@ function displayShow(object) {
 }
 
 
-function displayShows(array) {
+function loadShows(array) {
     array.forEach((event) => {
         displayShow(event);
     })
@@ -73,4 +113,6 @@ function displayShows(array) {
 
 // Add comments on page load
 
-displayShows(showDetailsArray);
+loadShows(showDetailsArray);
+
+

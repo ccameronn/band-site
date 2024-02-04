@@ -55,39 +55,104 @@
 
 
 .shows {
+    @include tabletAndDesktop{
+        padding: 1rem;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+    }
 
 
     &__title {
         padding: 1rem;
+        color: $bandsite-black;
+
+        @include desktop {
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
     }
 
     &__list {
+        list-style-type: none;
+        @include desktop {
+            flex: 5;
+            padding-top: 2rem;;
+        }
 
     }
 
     &__list-item {
-        padding: 1rem;
+        padding: 2rem 1rem;
+        @include tabletAndDesktop {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &:not(.shows__list-item--active):hover {
+            background-color: $alabaster;
+          }
+        
+        &--active {
+            background-color: $mercury;
+        }
     }
 
-    &__list-item, p {
-        margin-bottom: 1rem;
-    }
 
     &__label {
         color: $silver;
         font-size: 12px;
+
+        @include tabletAndDesktop {
+            display: none;
+          }
+
     }
+
+    &__label-header-container {
+        display: none;
+
+        @include tabletAndDesktop {
+            display: flex;
+            flex-direction: row;
+          }
+    }
+
+    &__label-header {
+        color: $silver;
+        font-size: 12px;
+        flex: 1;
+        padding: 1rem;
+    }
+
+
 
     &__date {
         font-size: 16px;
+
+        @include tabletAndDesktop {
+            flex: 1;
+          }
     }
 
     &__venue {
         font-size: 16px;
+
+        @include tabletAndDesktop {
+            flex: 1;
+          }
     }
 
     &__location {
         font-size: 16px;
+
+        @include tabletAndDesktop {
+            flex: 1;
+          }
     }
 
     &__button {
@@ -99,19 +164,30 @@
         color: $white;
         font-size: 20px;
         cursor: pointer;
+
+        @include tabletAndDesktop {
+            flex: 1;
+          }
     }
+
+    &__button:hover {
+        background-color: $bandsite-darkblack;
+      }
+    
+    
 
     &__divider{
         background-color: $mercury;
         width: 100%;
         height: 1px;
-        margin: 16px 0px;
     }
+
+    
 
 }
 
 
-    
+
 
 
 
