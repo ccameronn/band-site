@@ -22,32 +22,46 @@ class BandSiteApi {
     }
 
     async getComments() {
-        let response = await axios.get(this.baseUrl + "comments" + this.apiKey)
-        console.log(response);
-                let commentsSection = response.data;
+        // api call
+        let response = await axios.get(this.baseUrl + "comments" + this.apiKey);
 
-                console.log(commentsSection);
-                return commentsSection;
+        // assign response array to variable
+        var commentsArray = response.data;
+
+
+        
+        // SORT array into time order
+        // Sort by timestamp value in ascending order
+        commentsArray.sort(function(a, b) {
+            // Assign timestamps to variables
+            let dateA = a.timestamp;
+            let dateB = b.timestamp;
+          
+            // Subtract the timestamps to give negative, positive, or zero
+            return dateA - dateB;
+        });
+          
+        console.log(commentsArray);
+
+
+
+
+        // convert timestamps to dates
+        const commentsSection = commentsArray.map(obj => {
+            // create date variable using the timestamp
+            let date = new Date(obj.timestamp);
+            // return new object to array with the next date as the timestamp
+            return { ...obj, timestamp: (date.toLocaleDateString('en-US')) };
+        });
+                 
+
+        return commentsSection;
             
-    
     }  
         
         
     
-        // // sort list of comments by date
-        // let responseArray = response.data;
 
-        //   // Sort by date value in ascending order
-        //   responseArray.sort(function(a, b) {
-        //     // Convert the date strings to Date objects
-        //     let dateA = new Date(a.timestamp);
-        //     let dateB = new Date(b.timestamp);
-          
-        //     // Subtract the dates to get a value that is either negative, positive, or zero
-        //     return dateA - dateB;
-        //   });
-          
-        //   console.log(responseArray);
         
 
     

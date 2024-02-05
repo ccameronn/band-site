@@ -12,7 +12,6 @@ import BandSiteApi from "./band-site-api.js";
 
 const BandSiteApiCall = new BandSiteApi(CameronApiKey);
 
-// let commentsSection = BandSiteApiCall.getComments()
 let commentsSection = await BandSiteApiCall.getComments()
 console.log(commentsSection)
 
@@ -93,7 +92,7 @@ form.addEventListener('submit', function(event){
 
     // store Name input, comment input,  timestamp, 
 
-    time = new Date();
+    let time = new Date();
 
     let inputName = event.target.name.value;
     let inputComment = event.target.comment.value;
