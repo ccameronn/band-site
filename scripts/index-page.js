@@ -13,7 +13,7 @@ import BandSiteApi from "./band-site-api.js";
 const BandSiteApiCall = new BandSiteApi(CameronApiKey);
 
 // let commentsSection = BandSiteApiCall.getComments()
-let commentsSection = BandSiteApiCall.getComments()
+let commentsSection = await BandSiteApiCall.getComments()
 console.log(commentsSection)
 
 

@@ -22,12 +22,13 @@ class BandSiteApi {
     }
 
     async getComments() {
-        let response = await axios.get(this.baseUrl + "comments" + this.apiKey).then(() => {
+        let response = await axios.get(this.baseUrl + "comments" + this.apiKey)
+        console.log(response);
                 let commentsSection = response.data;
 
                 console.log(commentsSection);
                 return commentsSection;
-            });
+            
     
     }  
         
