@@ -1,3 +1,7 @@
+const CameronApiKey = "?api_key=f58f6e6b-36c4-44e6-8905-0f8b79ecf516"
+
+
+
 let showDetailsArray = [
     {date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco, CA"},
     {date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco, CA"},

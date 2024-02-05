@@ -1,9 +1,23 @@
 
-let commentsSection = [
-    {name: "Miles Acosta", timestamp: "12/20/2020", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
-    {name: "Emilie Beach", timestamp: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name: "Connor Walton", timestamp: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}    
-];
+// let commentsSection = [
+//     {name: "Miles Acosta", timestamp: "12/20/2020", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
+//     {name: "Emilie Beach", timestamp: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
+//     {name: "Connor Walton", timestamp: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}    
+// ];
+
+
+const CameronApiKey = "?api_key=f58f6e6b-36c4-44e6-8905-0f8b79ecf516"
+
+import BandSiteApi from "./band-site-api.js";
+
+const BandSiteApiCall = new BandSiteApi(CameronApiKey);
+
+// let commentsSection = BandSiteApiCall.getComments()
+let commentsSection = BandSiteApiCall.getComments()
+console.log(commentsSection)
+
+
+
 
 // Selector for the comment list
 
@@ -116,7 +130,6 @@ form.addEventListener('submit', function(event){
         // clear comments on site
 
         let currentComments = document.querySelectorAll(".jtc__clear");
-        console.log(currentComments);
         currentComments.forEach((event) => {
             event.remove();
         })

@@ -1,4 +1,4 @@
-const apiKey = "?api_key=f58f6e6b-36c4-44e6-8905-0f8b79ecf516"
+
 
 
 
@@ -22,12 +22,34 @@ class BandSiteApi {
     }
 
     async getComments() {
-        // get request for comments
-        // const response = await axios.get(this.baseUrl + "comments" + apiKey)
+        let response = await axios.get(this.baseUrl + "comments" + this.apiKey).then(() => {
+                let commentsSection = response.data;
 
-        // sort list of comments by date
+                console.log(commentsSection);
+                return commentsSection;
+            });
+    
+    }  
+        
+        
+    
+        // // sort list of comments by date
+        // let responseArray = response.data;
 
-    }
+        //   // Sort by date value in ascending order
+        //   responseArray.sort(function(a, b) {
+        //     // Convert the date strings to Date objects
+        //     let dateA = new Date(a.timestamp);
+        //     let dateB = new Date(b.timestamp);
+          
+        //     // Subtract the dates to get a value that is either negative, positive, or zero
+        //     return dateA - dateB;
+        //   });
+          
+        //   console.log(responseArray);
+        
+
+    
 
     async getShows() {
         // get request to shows
@@ -40,6 +62,8 @@ class BandSiteApi {
 
   }
 
-  BandSiteApi(apiKey);
 
 
+
+
+export default BandSiteApi;
