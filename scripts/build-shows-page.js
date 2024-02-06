@@ -1,15 +1,15 @@
 const CameronApiKey = "?api_key=f58f6e6b-36c4-44e6-8905-0f8b79ecf516"
 
+// API Call for show details
+
+import BandSiteApi from "./band-site-api.js";
+
+const BandSiteApiCall = new BandSiteApi(CameronApiKey);
+
+let showDetailsArray = await BandSiteApiCall.getShows();
+console.log(showDetailsArray)
 
 
-let showDetailsArray = [
-    {date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco, CA"},
-    {date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco, CA"},
-    {date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Francisco, CA"},
-    {date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Francisco, CA"},
-    {date: "Fri Nov 26 2021", venue: "Moscow Center", location: "San Francisco, CA"},
-    {date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco, CA"}
-];
 
 
 

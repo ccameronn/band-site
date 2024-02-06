@@ -21,6 +21,7 @@ class BandSiteApi {
         // this.baseUrl + "comments" + this.apiKey;
     }
 
+
     async getComments() {
         // api call
         let response = await axios.get(this.baseUrl + "comments" + this.apiKey);
@@ -29,9 +30,7 @@ class BandSiteApi {
         var commentsArray = response.data;
 
 
-        
-        // SORT array into time order
-        // Sort by timestamp value in ascending order
+        // Sort array by timestamp value in ascending order
         commentsArray.sort(function(a, b) {
             // Assign timestamps to variables
             let dateA = a.timestamp;
@@ -44,17 +43,14 @@ class BandSiteApi {
         console.log(commentsArray);
 
 
-
-
         // convert timestamps to dates
         const commentsSection = commentsArray.map(obj => {
             // create date variable using the timestamp
             let date = new Date(obj.timestamp);
-            // return new object to array with the next date as the timestamp
+            // return new object to array with the new date as the timestamp
             return { ...obj, timestamp: (date.toLocaleDateString('en-US')) };
         });
                  
-
         return commentsSection;
             
     }  
@@ -67,9 +63,23 @@ class BandSiteApi {
     
 
     async getShows() {
-        // get request to shows
+        // get request for shows list
+        let response = await axios.get(this.baseUrl + "showdates" + this.apiKey);
 
+        var responseArray = response.data;
+
+        // convert time to dates
+        const showDetailsArray = responseArray.map(obj => {
+            // create date variable using the time
+            let date = new Date(obj.date);
+            // return new object to array with the new date as the timestamp - also rename place as venue
+            return { ...obj, date: (date.toDateString('en-US')), venue: obj.place};
+        });
+
+        console.log(showDetailsArray)
+        return showDetailsArray;
         // return array of show data objects returned from API
+
     }
 
 
