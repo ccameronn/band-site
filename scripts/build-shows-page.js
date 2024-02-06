@@ -9,10 +9,6 @@ const BandSiteApiCall = new BandSiteApi(CameronApiKey);
 let showDetailsArray = await BandSiteApiCall.getShows();
 
 
-
-
-
-
 let showsList = document.querySelector(".shows__list");
 
 // HEADER LABELS only visible in tablet and desktop view
