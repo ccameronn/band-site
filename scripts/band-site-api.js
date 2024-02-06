@@ -19,6 +19,16 @@ class BandSiteApi {
 
     async postComment(object) {
         // this.baseUrl + "comments" + this.apiKey;
+        let response = await axios.post(this.baseUrl + "comments" + this.apiKey, object);
+
+        let newCommentObject = response.data;
+
+        // convert timestamp to date
+        let date = new Date(newCommentObject.timestamp);
+        return { ...newCommentObject, timestamp: (date.toLocaleDateString('en-US'))};
+
+
+        return newCommentObject;
     }
 
 
@@ -40,8 +50,7 @@ class BandSiteApi {
             return dateA - dateB;
         });
           
-        console.log(commentsArray);
-
+        // console.log(commentsArray);
 
         // convert timestamps to dates
         const commentsSection = commentsArray.map(obj => {
@@ -58,10 +67,6 @@ class BandSiteApi {
         
     
 
-        
-
-    
-
     async getShows() {
         // get request for shows list
         let response = await axios.get(this.baseUrl + "showdates" + this.apiKey);
@@ -76,17 +81,14 @@ class BandSiteApi {
             return { ...obj, date: (date.toDateString('en-US')), venue: obj.place};
         });
 
-        console.log(showDetailsArray)
+        // console.log(showDetailsArray)
         return showDetailsArray;
         // return array of show data objects returned from API
 
     }
 
 
-
-
   }
-
 
 
 

@@ -12,8 +12,7 @@ import BandSiteApi from "./band-site-api.js";
 
 const BandSiteApiCall = new BandSiteApi(CameronApiKey);
 
-let commentsSection = await BandSiteApiCall.getComments()
-console.log(commentsSection)
+let commentsSection = await BandSiteApiCall.getComments();
 
 
 
@@ -87,38 +86,44 @@ addComments(commentsSection);
 let form = document.querySelector('.jtc__form-inputs')
 
 
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', async function(event){
     event.preventDefault();
 
     // store Name input, comment input,  timestamp, 
 
-    let time = new Date();
 
     let inputName = event.target.name.value;
     let inputComment = event.target.comment.value;
-    let inputTimestamp = (time.getMonth() + 1) + "/" + time.getDate() + "/" + time.getFullYear();
 
     // Add error red border to entry box on empty entries
 
-    if (inputName === "") {
-        let nameEntryBox = document.querySelector(".jtc__form-input-name");
+    let nameEntryBox = document.querySelector(".jtc__form-input-name");
+    let commentEntryBox = document.querySelector(".jtc__form-input-comment");
+
+    if (inputName === "" && inputComment === "") {
+        nameEntryBox.classList.add("jtc__form-input-name--error-state");
+        commentEntryBox.classList.add("jtc__form-input-comment--error-state");
+
+    } else if (inputName === "") {
+        commentEntryBox.classList.remove("jtc__form-input-comment--error-state");
         nameEntryBox.classList.add("jtc__form-input-name--error-state");
 
     } else if (inputComment === "") {
-        let commentEntryBox = document.querySelector(".jtc__form-input-comment");
+        nameEntryBox.classList.remove("jtc__form-input-name--error-state");
         commentEntryBox.classList.add("jtc__form-input-comment--error-state");
     
     } else {
-        let nameEntryBox = document.querySelector(".jtc__form-input-name");
         nameEntryBox.classList.remove("jtc__form-input-name--error-state");
-        let commentEntryBox = document.querySelector(".jtc__form-input-comment");
         commentEntryBox.classList.remove("jtc__form-input-comment--error-state");
 
-        // create object with the above
+        // create new comment object 
 
-        let newCommentObject = {name: inputName, timestamp: inputTimestamp, comment: inputComment};
+        // post new comment object via api
+        let postCommentObject = {name: inputName, comment: inputComment};
+        let newCommentObject = await BandSiteApiCall.postComment(postCommentObject)
+        // receive new comment object names newCommentObject
 
-        // add object to commentsSection array
+        // add new object to commentsSection array
 
         commentsSection.push(newCommentObject);
 

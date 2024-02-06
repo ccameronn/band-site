@@ -7,7 +7,6 @@ import BandSiteApi from "./band-site-api.js";
 const BandSiteApiCall = new BandSiteApi(CameronApiKey);
 
 let showDetailsArray = await BandSiteApiCall.getShows();
-console.log(showDetailsArray)
 
 
 
