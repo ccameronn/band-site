@@ -1,11 +1,8 @@
 const CameronApiKey = "?api_key=f58f6e6b-36c4-44e6-8905-0f8b79ecf516"
 
 // API Call for show details
-
 import BandSiteApi from "./band-site-api.js";
-
 const BandSiteApiCall = new BandSiteApi(CameronApiKey);
-
 let showDetailsArray = await BandSiteApiCall.getShows();
 
 
@@ -15,7 +12,6 @@ let showsList = document.querySelector(".shows__list");
 function createHeaderLabels() {
     let labelHeaderContainer = showsList.appendChild(document.createElement("div"));
     labelHeaderContainer.classList.add("shows__label-header-container");
-
 
     let dateLabelHeader = labelHeaderContainer.appendChild(document.createElement("p"));
     dateLabelHeader.classList.add("shows__label-header", "font__labels");
@@ -36,13 +32,9 @@ function createHeaderLabels() {
 createHeaderLabels()
 
 
-// function that creates a list item in the DOM with an input object
-
+// function that creates a show list item in the DOM with an input object
 function displayShow(object) {
-
     // create new show using DOM manipulation
-
-
     let newShow = showsList.appendChild(document.createElement("li"));
     newShow.classList.add("shows__list-item");
 
@@ -53,14 +45,12 @@ function displayShow(object) {
     let dateInfo = newShow.appendChild(document.createElement("p"));
     dateInfo.classList.add("shows__date", "font__body-copy--bold");
     
-
     let venueLabel = newShow.appendChild(document.createElement("p"));
     venueLabel.classList.add("shows__label", "font__labels");
     venueLabel.textContent = "VENUE";
 
     let venueInfo = newShow.appendChild(document.createElement("p"));
     venueInfo.classList.add("shows__venue", "font__body-copy");
-
 
     let locationLabel = newShow.appendChild(document.createElement("p"));
     locationLabel.classList.add("shows__label", "font__labels");
@@ -69,16 +59,12 @@ function displayShow(object) {
     let locationInfo = newShow.appendChild(document.createElement("p"));
     locationInfo.classList.add("shows__location", "font__body-copy");
 
-
-
     let newButton = newShow.appendChild(document.createElement("button"));
     newButton.classList.add("shows__button",  "font__buttons");
     newButton.textContent = "BUY TICKETS";
 
-
     let newDivider = showsList.appendChild(document.createElement("div"));
     newDivider.classList.add("shows__divider");
-
 
     // function to change color of a show item on click
     newShow.addEventListener("click", () => {
@@ -92,26 +78,18 @@ function displayShow(object) {
         newShow.classList.add("shows__list-item--active");
       });
 
-
-    // Assign varibles to date, venue, and location
-
+    // Assign date, venue, and location to display in DOM
     dateInfo.textContent = object.date;
     venueInfo.textContent = object.venue;
-    locationInfo.textContent = object.location
-
-
-
+    locationInfo.textContent = object.location;
 }
 
-
+// function to display an array of show objects in the DOM
 function loadShows(array) {
     array.forEach((event) => {
         displayShow(event);
     })
 }
 
-// Add comments on page load
-
+// Add list of shows on page load
 loadShows(showDetailsArray);
-
-
